@@ -55,20 +55,74 @@ function Pessoas() {
         }
 
 
-        await api.post("/pessoa", {
+        try {
 
-            nome: nome,
+            await api.post("/pessoa", {
 
-            idade: Number(idade)
+                nome: nome,
 
-        });
+                idade: Number(idade)
+
+            });
 
 
-        setNome("");
+            setNome("");
 
-        setIdade("");
+            setIdade("");
 
-        carregarPessoas();
+            carregarPessoas();
+
+
+        } catch (error) {
+
+            console.error(
+                "Erro ao cadastrar pessoa:",
+                error
+            );
+
+            alert("Erro ao cadastrar pessoa.");
+
+        }
+
+    }
+
+
+
+    async function excluirPessoa(id: number) {
+
+        const confirmar = window.confirm(
+            "Deseja realmente excluir esta pessoa? Todas as transações relacionadas também serão apagadas."
+        );
+
+
+        if (!confirmar) {
+
+            return;
+
+        }
+
+
+        try {
+
+            await api.delete(`/pessoa/${id}`);
+
+
+            carregarPessoas();
+
+
+        } catch (error) {
+
+            console.error(
+                "Erro ao excluir pessoa:",
+                error
+            );
+
+
+            alert(
+                "Erro ao excluir pessoa."
+            );
+
+        }
 
     }
 
@@ -166,6 +220,11 @@ function Pessoas() {
                             </th>
 
 
+                            <th>
+                                Ações
+                            </th>
+
+
                         </tr>
 
                     </thead>
@@ -193,6 +252,25 @@ function Pessoas() {
 
                                     <td>
                                         {pessoa.quantidadeTransacoes}
+                                    </td>
+
+
+                                    <td>
+
+                                        <button
+
+                                            className="delete-button"
+
+                                            onClick={() =>
+                                                excluirPessoa(pessoa.id)
+                                            }
+
+                                        >
+
+                                            Excluir
+
+                                        </button>
+
                                     </td>
 
 
