@@ -1,154 +1,92 @@
-# 💰 Sistema de Controle de Gastos Residenciais
+# 💰 Controle de Gastos Residenciais
 
-Projeto desenvolvido como teste técnico utilizando **ASP.NET Core (.NET)** no back-end e **React + TypeScript** no front-end.
+Sistema desenvolvido para auxiliar no controle financeiro residencial, permitindo o gerenciamento de pessoas, receitas, despesas e transações de forma simples e organizada.
 
-O sistema permite realizar o gerenciamento de pessoas e transações financeiras, seguindo as regras de negócio propostas no desafio.
-
----
-
-## 📌 Funcionalidades
-
-### 👤 Cadastro de Pessoas
-
-- Cadastro de pessoas
-- Listagem de pessoas
-- Exclusão de pessoas
-- Exclusão automática das transações ao remover uma pessoa (Cascade Delete)
-
-### 💳 Cadastro de Transações
-
-- Cadastro de receitas e despesas
-- Listagem das transações
-- Associação obrigatória a uma pessoa cadastrada
-- Validação para impedir que menores de 18 anos cadastrem receitas
-
-### 📊 Dashboard
-
-- Total de receitas
-- Total de despesas
-- Saldo geral
-- Resumo financeiro individual por pessoa
+O projeto foi criado com foco em boas práticas de desenvolvimento de software, separação de responsabilidades e construção de uma aplicação completa utilizando uma API em .NET e uma interface moderna em React + TypeScript.
 
 ---
 
-## 🛠 Tecnologias Utilizadas
+## 📌 Sobre o Projeto
 
-### Back-end
+O **Controle de Gastos Residenciais** permite que usuários acompanhem sua vida financeira através do cadastro de pessoas, registro de movimentações financeiras e visualização de informações consolidadas através de um dashboard.
 
-- ASP.NET Core
+O objetivo principal é facilitar o acompanhamento de:
+
+- Receitas;
+- Despesas;
+- Saldo financeiro;
+- Pessoas cadastradas;
+- Histórico de transações.
+
+---
+
+# 🚀 Tecnologias Utilizadas
+
+## Backend
+
 - C#
+- ASP.NET Core Web API
 - Entity Framework Core
-- SQLite
+- SQL Server
+- Swagger para documentação da API
 
-### Front-end
+## Frontend
 
 - React
 - TypeScript
 - Vite
-- Axios
+- CSS3
+- Consumo de API REST
+
+## Ferramentas
+
+- Git
+- GitHub
+- Visual Studio Code
+- Visual Studio
 
 ---
 
-## 📂 Estrutura do Projeto
+# ✨ Funcionalidades
 
-```
-ControleGastosResidenciais/
+## 📊 Dashboard Financeiro
 
-├── backend/
-│   └── ControleGastos.API/
-│
-├── frontend/
-│   └── src/
-│
-└── README.md
-```
+Visualização geral da situação financeira:
 
----
+- Total de receitas;
+- Total de despesas;
+- Saldo atual;
+- Resumo das movimentações.
 
-# ▶ Como executar o projeto
-
-## Pré-requisitos
-
-- .NET SDK 8.0 (ou versão utilizada no projeto)
-- Node.js
-- npm
+![Dashboard Financeiro](assets/dashboard.png)
 
 ---
 
-## Executando o Back-end
+## 👥 Gerenciamento de Pessoas
 
-Entre na pasta da API:
+Permite cadastrar e visualizar pessoas relacionadas ao controle financeiro.
 
-```bash
-cd backend/ControleGastos.API
-```
+Funcionalidades:
 
-Execute:
+- Cadastro de pessoas;
+- Listagem de usuários;
+- Organização dos responsáveis pelas movimentações.
 
-```bash
-dotnet restore
-dotnet run
-```
-
-ou
-
-```bash
-dotnet watch run
-```
-
-A API ficará disponível em:
-
-```
-http://localhost:5262
-```
-
-Swagger:
-
-```
-http://localhost:5262/swagger
-```
+![Pessoas](assets/pessoas.png)
 
 ---
 
-## Executando o Front-end
+## 💳 Controle de Transações
 
-Abra outro terminal.
+Gerenciamento das movimentações financeiras:
 
-Entre na pasta do frontend:
+- Registro de receitas;
+- Registro de despesas;
+- Controle de valores;
+- Organização financeira.
 
-```bash
-cd frontend
-```
-
-Instale as dependências:
-
-```bash
-npm install
-```
-
-Execute:
-
-```bash
-npm run dev
-```
-
-O React será iniciado em:
-
-```
-http://localhost:5173
-```
+![Transações](assets/transacoes.png)
 
 ---
 
-## 📋 Regras de Negócio
-
-- Cada transação deve estar vinculada a uma pessoa cadastrada.
-- Pessoas menores de 18 anos podem cadastrar apenas despesas.
-- Ao excluir uma pessoa, todas as suas transações são removidas automaticamente.
-- O Dashboard apresenta o resumo financeiro geral e por pessoa.
-
----
-
-## 👨‍💻 Autor
-
-Kaik Cardoso
+# 🏗️ Estrutura do Projeto
